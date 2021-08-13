@@ -122,9 +122,11 @@ def changeTheme(file, theme):
     sg.PopupQuick('To change your theme please restart the program.', auto_close=False)
 
 
-def theme(event, themes):
+def themeEvent(event, themes):
     for item in themes:
+        
         if event in item:
+            print(event)
             changeTheme('theme.txt', item)
             return True
     
@@ -145,5 +147,5 @@ def createWindowButton(list, name='Window'):
     while True:
         event, values = sg.Window('Themes', layout).read(close=True)
         print(event)
-        if theme(event, list):
+        if themeEvent(event, list):
             return
