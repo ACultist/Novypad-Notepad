@@ -20,12 +20,9 @@ for c in range(0, len(themes)):
         themes[c] = themes[c] + ' (atual)'
 
 
-about = '''Version 1.3.1
+about = '''Version 1.3.2
 Authors: LdmasterKen and Kauê Guimarães'''
-update = '''-Themes update
--Fix commands
--Resizable'''
-
+update = '''-Docstring etc'''
 WIN_W = 90
 WIN_H = 25
 filename = None
@@ -42,13 +39,12 @@ layout = [[sg.Menu(menu_layout)],
                 [sg.Text('> New NovyTxt <', font=('Consolas', 10), size=(WIN_W, 1), key='_INFO_')],
                 [sg.Multiline(font=('Consolas', 12), size=(WIN_W, WIN_H), key='_BODY_')]]
 
-window = sg.Window('NovyPad 1.3.1', layout=layout, margins=(0, 0), resizable=True, return_keyboard_events=True)
+window = sg.Window('NovyPad 1.3.2', layout=layout, margins=(0, 0), resizable=True, return_keyboard_events=True)
 window.read(1)
 window['_BODY_'].expand(True, True)
 
 
 while True:
-    #createWindowButton(themes, 'Themes')
     event, values = window.read()
     
     if event in (None, 'Leave'):
@@ -62,10 +58,10 @@ while True:
     if event in ('Save as',):
         filename = save_file_as(window, values)
     if event in ('About',):
-        createWindow(about)
+        createWindow(about, 'About')
     if event in ('New',):
-        createWindow(update)
+        createWindow(update, 'New')
 
     #Themes
     if event in ('Themes',):
-        createWindowButton(themes, 'Themes')
+        createThemesWindowButton(themes, 'Themes')
