@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 import os
 from os import remove
 
-from PySimpleGUI.PySimpleGUI import theme
+from PySimpleGUI.PySimpleGUI import Window, theme
 
 #Biblioteca adicional
 def getUsername():
@@ -122,16 +122,28 @@ def changeTheme(file, theme):
     sg.PopupQuick('To change your theme please restart the program.', auto_close=False)
 
 
-def teste(themes):
-    layout = []
+def theme(event, themes):
+    for item in themes:
+        if event in item:
+            changeTheme('theme.txt', item)
+            return True
+    
+    return False
+
+
+def createWindowButton(list, name='Window'):
+    layout = [[]]
     cont = 0
     linha = 0
-    for tema in themes:
-        layout[linha].append([[sg.Button(f'Teste')]])
+    for tema in list:
+        layout[linha].append(sg.Button(list[cont]))
         cont += 1
         if cont % 3 == 0:
-            layout[0].append
+            layout.append([])
             linha += 1
     
     while True:
-        event, values = sg.Window('List Comprehensions', layout).read(close=True)
+        event, values = sg.Window('Themes', layout).read(close=True)
+        print(event)
+        if theme(event, list):
+            return
