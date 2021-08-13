@@ -1,7 +1,6 @@
 This is completely free source code for anything, fork etc...
 1.3.0 Release: Added themes option.
-1.3.1 (Snapshot): Released, Bugs Correction.
-1.3.1 Release: Coming soon.
+1.3.1 Release: Fixed bugs, added fullscreen and windows resizable.
 
 
 
