@@ -124,9 +124,7 @@ def changeTheme(file, theme):
 
 def themeEvent(event, themes):
     for item in themes:
-        
         if event in item:
-            print(event)
             changeTheme('theme.txt', item)
             return True
     
@@ -145,7 +143,6 @@ def createWindowButton(list, name='Window'):
             linha += 1
     
     while True:
-        event, values = sg.Window('Themes', layout).read(close=True)
-        print(event)
+        event, values = sg.Window('Themes', layout, auto_close=False).read(close=True)
         if themeEvent(event, list):
             return

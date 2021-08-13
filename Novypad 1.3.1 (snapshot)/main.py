@@ -20,9 +20,10 @@ for c in range(0, len(themes)):
         themes[c] = themes[c] + ' (atual)'
 
 
-about = '''Version 1.3.0 by Kauê Guimarães
-Author: LdmasterKen'''
-update = '''-Themes'''
+about = '''Version 1.3.1
+Authors: LdmasterKen and Kauê Guimarães'''
+update = '''-Themes update
+-Fix commands'''
 
 WIN_W = 90
 WIN_H = 25
@@ -40,7 +41,7 @@ layout = [[sg.Menu(menu_layout)],
                 [sg.Text('> New NovyTxt <', font=('Consolas', 10), size=(WIN_W, 1), key='_INFO_')],
                 [sg.Multiline(font=('Consolas', 12), size=(WIN_W, WIN_H), key='_BODY_')]]
 
-window = sg.Window('NovyPad 1.3.0', layout=layout, margins=(0, 0), resizable=True, return_keyboard_events=True)
+window = sg.Window('NovyPad 1.3.1', layout=layout, margins=(0, 0), resizable=True, return_keyboard_events=True)
 window.read(1)
 window['_BODY_'].expand(True, True)
 
