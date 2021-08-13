@@ -46,8 +46,9 @@ window['_BODY_'].expand(True, True)
 
 
 while True:
+    teste(themes)
     event, values = window.read()
-
+    
     if event in (None, 'Leave'):
         break
     if event in (file_new, 'n:78'):
