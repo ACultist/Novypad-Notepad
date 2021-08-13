@@ -33,7 +33,7 @@ file_open = 'Open..............(CTRL+O)'
 file_save = 'Save............(CTRL+S)'
 
 menu_layout = [['File', [file_new, file_open, file_save, 'Save as', '---', 'Leave']],
-                     ['Themes', themes],
+                     ['Settings', 'Themes'],
                      ['Help', ['About', 'New']]]
 
 layout = [[sg.Menu(menu_layout)],
@@ -65,6 +65,5 @@ while True:
         createWindow(update)
 
     #Themes
-    for item in menu_layout[1][1]:
-        if event in (item,):
-            changeTheme(theme, item)
+    if event in ('Themes',):
+        createWindowButton(themes, 'Themes')
