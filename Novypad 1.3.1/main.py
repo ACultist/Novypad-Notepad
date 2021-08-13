@@ -23,7 +23,8 @@ for c in range(0, len(themes)):
 about = '''Version 1.3.1
 Authors: LdmasterKen and Kauê Guimarães'''
 update = '''-Themes update
--Fix commands'''
+-Fix commands
+-Change size'''
 
 WIN_W = 90
 WIN_H = 25
